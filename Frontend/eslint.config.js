@@ -7,6 +7,7 @@ import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import ts from 'typescript-eslint';
 import svelteConfig from './svelte.config.js';
+import tailwind from "eslint-plugin-tailwindcss";
 
 const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
 
@@ -17,6 +18,7 @@ export default defineConfig(
 	svelte.configs.recommended,
 	prettier,
 	svelte.configs.prettier,
+	tailwind.configs["flat/recommended"],
 	{
 		languageOptions: { globals: { ...globals.browser, ...globals.node } },
 		rules: {
@@ -39,6 +41,6 @@ export default defineConfig(
 	{
 		// Override or add rule settings here, such as:
 		// 'svelte/button-has-type': 'error'
-		rules: {}
+		rules: {"tailwindcss/no-custom-classname": "error"}
 	}
 );

@@ -1,0 +1,8 @@
+{
+	"devDependencies": {
+		"eslint-plugin-tailwindcss": "^3.18.3"
+	},
+	"dependencies": {
+		"yootils": "^0.3.1"
+	}
+}
