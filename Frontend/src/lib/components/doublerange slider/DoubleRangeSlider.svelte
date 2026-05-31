@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { clamp } from 'yootils';
-
-	let { minSliderInput = $bindable(), maxSliderInput = $bindable() }: { minSliderInput: number; maxSliderInput: number } =
-		$props();
+	let {
+		minSliderInput = $bindable(),
+		maxSliderInput = $bindable(),
+	}: { minSliderInput: number; maxSliderInput: number } = $props();
+	const clamp = (n: number, lo: number, hi: number) => Math.min(Math.max(n, lo), hi);
 	let leftHandle: HTMLDivElement;
 	let body: HTMLDivElement;
 	let slider: HTMLDivElement;
